@@ -11,4 +11,5 @@ RUN pip install --upgrade pip --no-cache-dir && pip install -r requirements.txt
 
 COPY . /app/
 
-CMD ["gunicorn", "recipes_project.wsgi:application", "--bind", "0.0.0.0:8000"]
+EXPOSE 80
+CMD ["gunicorn", "recipes_project.wsgi:application", "--bind", "0.0.0.0:80"]
