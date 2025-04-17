@@ -3,6 +3,11 @@ from .models import Recipe
 from django.db.models import Q
 
 # Create your views here.
+#home landing page
+def landing_page(request):
+    return render(request, 'landing.html')
+
+#recipes list
 def recipe_list(request):
     query = request.GET.get('q')
     if query:
@@ -16,3 +21,5 @@ def recipe_list(request):
         'recipes': recipes,
         'query': query,
     })
+
+
