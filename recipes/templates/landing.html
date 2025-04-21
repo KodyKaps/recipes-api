@@ -8,9 +8,7 @@
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+           
             height: 100vh;
             background: #fefefe;
         }
@@ -41,9 +39,18 @@
         a.button:hover {
             background-color: #45a049;
         }
+        nav{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 8px
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="register" class="btn btn-primary">Sign Up</a>
+        <a href="login" class="btn btn-outline-secondary ms-2">Login</a>
+    </nav>
     <div class="container">
         <h1>Welcome to RecipeBook 👨‍🍳</h1>
         <p>Discover, share, and search recipes in seconds.</p>
