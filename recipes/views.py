@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
+import matplotlib.pyplot as plt
+from io import BytesIO
+import base64
 # Create your views here.
 #home landing page
 def landing_page(request):
@@ -63,4 +67,25 @@ def recipe_list(request):
         'query': query,
     })
 
+@login_required
+def reviews(request):
 
+    # 🔹 Mock data (e.g., recipe names and number of reviews)
+    labels = ['Pasta', 'Tacos', 'Pizza', 'Sushi', 'Salad']
+    data = [15, 25, 35, 10, 15]  # number of reviews per recipe
+
+    # 🔸 Create the pie chart
+    fig, ax = plt.subplots()
+    ax.pie(data, labels=labels, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+
+    # 🔸 Save to buffer
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+    buffer.seek(0)
+    image_png = buffer.getvalue()
+    buffer.close()
+
+    chart = base64.b64encode(image_png).decode('utf-8')
+
+    return render(request, 'recipes/reviews.html',{'chart': chart})
