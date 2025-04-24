@@ -3,3 +3,5 @@ gunicorn
 drf-yasg
 djangorestframework
 matplotlib
+whitenoise
+Brotli
