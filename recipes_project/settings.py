@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k(0y3u+d0u$%8tmdy4(e*5z_qs%txo07-mgnya8&cl1iv%lub)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kodys-recipes-api.onrender.com']
 
 
 # Application definition
