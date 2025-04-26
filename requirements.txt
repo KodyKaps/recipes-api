@@ -5,3 +5,4 @@ djangorestframework
 matplotlib
 whitenoise
 Brotli
+python-decouple
